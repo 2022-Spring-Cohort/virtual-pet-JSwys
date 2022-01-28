@@ -15,17 +15,15 @@ public class VirtualPet {
     public VirtualPet(String name, String type, int age, int hungerLevel, int happyLevel) {
         this.name = name;
         this.type = type;
-        this.age = 0;
-        this.hungerLevel = 5;
-        this.happyLevel = 5;
-
+        this.age = age;
+        this.hungerLevel = hungerLevel;
+        this.happyLevel = happyLevel;
     }
 
 // getters
 
     public String getName() {
-        return name;
-    }
+        return name; }
 
     public String getType() {
         return type;
@@ -45,6 +43,105 @@ public class VirtualPet {
 
 
 // methods
+
+    public void normalize() {
+        hungerLevel = 5;
+        happyLevel = 5;
+    }
+
+    public void walk() {
+        if (getType().equalsIgnoreCase("Rock")) {
+            System.out.println("\n" +
+                    "           .|+.\n" +
+                    "         .' |  '.\n" +
+                    "        J   |    '.\n" +
+                    "        L  .+.     '.\n" +
+                    "       J .'   '.     '+\n" +
+                    "       +' .'|'. '+.    \\\n" +
+                    "        '+  |  \"+  '+.  \\\n" +
+                    "         F  |   J     '. \\\n" +
+                    "         F  |    L  .+. ';+\n" +
+                    "        J   |    |.'  L';\n" +
+                    "        J   |     L   J  L\n" +
+                    "        |   |     |    L  L\n" +
+                    "        F   |     J    J  J\n" +
+                    "        F   |      L    L  L\n" +
+                    "_______J    |      |    J   |__________\n" +
+                    "       J    |      J     L   L\n" +
+                    "       |    |       L--.,;,--'\n" +
+                    "       +._  |    _,.+\n" +
+                    "          '-|,.-'      ");
+            hungerLevel++;
+            happyLevel += 2;
+            System.out.println(getName() + " gets a little hungrier and a little happier!");
+        }
+        if (getType().equalsIgnoreCase("Wolf")) {
+            System.out.println("\n" +
+                    "                            .d$$b\n" +
+                    "                          .' TO$;\\\n" +
+                    "                         /  : TP._;\n" +
+                    "                        / _.;  :Tb|\n" +
+                    "                       /   /   ;j$j\n" +
+                    "                   _.-\"       d$$$$\n" +
+                    "                 .' ..       d$$$$;\n" +
+                    "                /  /P'      d$$$$P. |\\\n" +
+                    "               /   \"      .d$$$P' |\\^\"l\n" +
+                    "             .'           `T$P^\"\"\"\"\"  :\n" +
+                    "         ._.'      _.'                ;\n" +
+                    "      `-.-\".-'-' ._.       _.-\"    .-\"\n" +
+                    "    `.-\" _____  ._              .-\"\n" +
+                    "   -(.g$$$$$$$b.              .'\n" +
+                    "     \"\"^^T$$$P^)            .(:\n" +
+                    "       _/  -\"  /.'         /:/;\n" +
+                    "    ._.'-'`-'  \")/         /;/;\n" +
+                    " `-.-\"..--\"\"   \" /         /  ;\n" +
+                    ".-\" ..--\"\"        -'          :\n" +
+                    "..--\"\"--.-\"         (\\      .-(\\\n" +
+                    "  ..--\"\"              `-\\(\\/;`\n" +
+                    "    _.                      :\n" +
+                    "                            ;`-\n" +
+                    "                           :\\\n" +
+                    "                           ;  ");
+            hungerLevel++;
+            happyLevel += 2;
+            System.out.println(getName() + " gets a little hungrier and a little happier!");
+        }
+        if (getType().equalsIgnoreCase("Dragon")) {
+            System.out.println("" +
+                    "                            ==(W{==========-      /===-                        \n" +
+                    "                              ||  (.--.)         /===-_---~~~~~~~~~------____  \n" +
+                    "                              | \\_,|**|,__      |===-~___                _,-' `\n" +
+                    "                 -==\\\\        `\\ ' `--'   ),    `//~\\\\   ~~~~`---.___.-~~      \n" +
+                    "             ______-==|        /`\\_. .__/\\ \\    | |  \\\\           _-~`         \n" +
+                    "       __--~~~  ,-/-==\\\\      (   | .  |~~~~|   | |   `\\        ,'             \n" +
+                    "    _-~       /'    |  \\\\     )__/==0==-\\<>/   / /      \\      /               \n" +
+                    "  .'        /       |   \\\\      /~\\___/~~\\/  /' /        \\   /'                \n" +
+                    " /  ____  /         |    \\`\\.__/-~~   \\  |_/'  /          \\/'                  \n" +
+                    "/-'~    ~~~~~---__  |     ~-/~         ( )   /'        _--~`                   \n" +
+                    "                  \\_|      /        _) | ;  ),   __--~~                        \n" +
+                    "                    '~~--_/      _-~/- |/ \\   '-~ \\                            \n" +
+                    "                   {\\__--_/}    / \\\\_>-|)<__\\      \\                           \n" +
+                    "                   /'   (_/  _-~  | |__>--<__|      |                          \n" +
+                    "                  |   _/) )-~     | |__>--<__|      |                          \n" +
+                    "                  / /~ ,_/       / /__>---<__/      |                          \n" +
+                    "                 o-o _//        /-~_>---<__-~      /                           \n" +
+                    "                 (^(~          /~_>---<__-      _-~                            \n" +
+                    "                ,/|           /__>--<__/     _-~                               \n" +
+                    "             ,//('(          |__>--<__|     /                  .----_          \n" +
+                    "            ( ( '))          |__>--<__|    |                 /' _---_~\\        \n" +
+                    "         `-)) )) (           |__>--<__|    |               /'  /     ~\\`\\      \n" +
+                    "        ,/,'//( (             \\__>--<__\\    \\            /'  //        ||      \n" +
+                    "      ,( ( ((, ))              ~-__>--<_~-_  ~--____---~' _/'/        /'       \n" +
+                    "    `~/  )` ) ,/|                 ~-_~>--<_/-__       __-~ _/                  \n" +
+                    "  ._-~//( )/ )) `                    ~~-'_/_/ /~~~~~~~__--~                    \n" +
+                    "   ;'( ')/ ,)(                              ~~~~~~~~~~                         \n" +
+                    "  ' ') '( (/                                                                   \n" +
+                    "    '   '  `");
+            hungerLevel ++;
+            happyLevel += 2;
+            System.out.println(getName() + " gets a little hungrier and a little happier!");
+        }
+    }
 
     public void greeting() {
         System.out.println("Hi, I'm your new Virtual Pet! My name is " + getName() + ", and I'm a " +
@@ -69,20 +166,20 @@ public class VirtualPet {
 
     public void bite() {
         System.out.println(getName() + " bit you! (Hunger - 1 and Happy -2)");
-        hungerLevel -= 1;
+        hungerLevel --;
         happyLevel -= 2;
     }
 
     public void wallow() {
         System.out.println("Nothing means anything! Why even try?! (Hunger + 2 and Happy + 1");
         hungerLevel += 2;
-        happyLevel += 1;
+        happyLevel ++;
     }
 
     public void bored() {
         System.out.println("Every day is the same thing! (Hunger +1 and Happy -1)");
-        hungerLevel += 1;
-        happyLevel -= 1;
+        hungerLevel ++;
+        happyLevel --;
     }
 
     public void birthday() {
@@ -93,8 +190,8 @@ public class VirtualPet {
 
     public void tick() {
         age++;
-        hungerLevel += 1;
-        happyLevel -= 1;
+        hungerLevel ++;
+        happyLevel --;
     }
 
     public void deathMessage() {
