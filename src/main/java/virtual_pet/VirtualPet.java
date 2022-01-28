@@ -112,7 +112,7 @@ public class VirtualPet {
                     "                              ||  (.--.)         /===-_---~~~~~~~~~------____  \n" +
                     "                              | \\_,|**|,__      |===-~___                _,-' `\n" +
                     "                 -==\\\\        `\\ ' `--'   ),    `//~\\\\   ~~~~`---.___.-~~      \n" +
-                    "             ______-==|        /`\\_. .__/\\ \\    | |  \\\\           _-~`         \n" +
+                    "             ______-==|        /`\\_. .__^\\ \\    | |  \\\\           _-~`         \n" +
                     "       __--~~~  ,-/-==\\\\      (   | .  |~~~~|   | |   `\\        ,'             \n" +
                     "    _-~       /'    |  \\\\     )__/==0==-\\<>/   / /      \\      /               \n" +
                     "  .'        /       |   \\\\      /~\\___/~~\\/  /' /        \\   /'                \n" +
@@ -142,6 +142,8 @@ public class VirtualPet {
             System.out.println(getName() + " gets a little hungrier and a little happier!");
         }
     }
+
+// mini-game methods
 
     public void greeting() {
         System.out.println("Hi, I'm your new Virtual Pet! My name is " + getName() + ", and I'm a " +

@@ -11,6 +11,7 @@ public class VirtualShelter {
     VirtualPet rocky = new VirtualPet("Rocky","Rock", 15, 1, 3);
     VirtualPet ghost = new VirtualPet("Ghost","Wolf", 33, 5, 7);
     VirtualPet falcor = new VirtualPet("Falcor", "Dragon", 51, 7, 5);
+    static VirtualPet adopted = new VirtualPet("Blank", "Blank", 0, 9, 1);
 
 
     public void populate() {
@@ -36,7 +37,6 @@ public class VirtualShelter {
     }
 
     public void adopt() {
-        VirtualPet adopted = new VirtualPet("Blank", "Blank", 0, 9, 1);
 
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter a pet's name to adopt it: ");

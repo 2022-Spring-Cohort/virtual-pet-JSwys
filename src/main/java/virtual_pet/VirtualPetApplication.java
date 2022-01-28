@@ -54,8 +54,8 @@ public class VirtualPetApplication {
         }
         System.out.println(dashes);
         System.out.println(
-                "[1] See all pets and stats" +
-                "\n[2] Add new pet to shelter" +
+                  "[1] See all pets and stats" +
+                "\n[2] Add new pet rock to the shelter" +
                 "\n[3] Take a shelter pet for a walk" +
                 "\n[4] Adopt a pet from shelter (if you have a currently adopted pet they will be set free)" +
                 "\n[5] Donate $$$ (equalize all pet stats)" +
