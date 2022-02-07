@@ -12,10 +12,6 @@ public abstract class Pet {
         this.health = health;
     }
 
-    public void greet() {
-        System.out.println("Welcome to Virtual Pet!");
-    }
-
     public abstract void tick();
 
     public abstract void status();

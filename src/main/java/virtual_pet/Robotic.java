@@ -4,11 +4,13 @@ public abstract class Robotic extends Pet {
 
     protected int charge;
     protected int errors;
+    protected boolean operational;
 
-    public Robotic(String name, int age, int health, int charge, int errors) {
+    public Robotic(String name, int age, int health, int charge, int errors, boolean operational) {
         super(name, age, health);
         this.charge = charge;
         this.errors = errors;
+        this.operational = operational;
     }
 
     public void status() {
@@ -17,6 +19,11 @@ public abstract class Robotic extends Pet {
         System.out.println("Health = " + health);
         System.out.println("Charge = " + charge + "/10");
         System.out.println("Errors = " + errors + "/10");
+        if (operational) {
+            System.out.println("Operational");
+        } else {
+            System.out.println("Broken");
+        }
         System.out.println("---");
     }
 
@@ -25,43 +32,50 @@ public abstract class Robotic extends Pet {
         errors++;
         charge--;
         int healthCheck;
+        int brokenCheck;
         if (errors > 5 && errors < 10) {
-            healthCheck = (int) (Math.random() * 10 + 1);
-            if (healthCheck > 6) {
-                health--;
+            brokenCheck = (int) (Math.random() * 10 + 1);
+            if (brokenCheck > 7) {
+                operational = false;
             }
         }
         if (errors >= 10) {
             errors = 10;
-            health--;
+            operational = false;
         }
-        if (charge < 5 && charge >= 0) {
+        if (charge < 5 && charge > 0) {
             healthCheck = (int) (Math.random() * 10 + 1);
             if (healthCheck > 6) {
                 health--;
+                if (health < 0) {
+                    health = 0;
+                }
             }
         }
-        if (charge < 0) {
+        if (charge <= 0) {
             charge = 0;
             health--;
+            if (health < 0) {
+                health = 0;
+            }
         }
     }
 
     public void troubleshoot() {
-        errors -= 3;
+        errors -= 5;
         if (errors < 0) {
             errors = 0;
         }
     }
 
     public void recharge() {
-        charge += 3;
+        charge += 5;
         if (charge > 10) {
             charge = 10;
         }
     }
 
     public void fix() {
-
+        operational = true;
     }
 }
